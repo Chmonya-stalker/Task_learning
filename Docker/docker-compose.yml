@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  flask:
+    container_name: flask-time
+    image: jcdemo/flaskapp
+    networks:
+      app_net: 
+        ipv4_address: 172.10.0.12  
+  revers:
+    container_name: revers
+    build: \revers
+    ports: 
+      - 80:80
+    networks:
+      app_net: 
+        ipv4_address: 172.10.0.10
+  testspeed:
+    container_name: speed-site
+    build: \site
+    networks:
+      app_net: 
+        ipv4_address: 172.10.0.11
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.10.0.0/24
+        gateway: 172.10.0.1
