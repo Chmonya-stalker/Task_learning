@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  flask:
+    container_name: flask-time
+    image: jcdemo/flaskapp
+
+  testspeed:
+    container_name: speed-site
+    build: \site
+
+  revers:
+    container_name: revers
+    build: \revers
+    ports: 
+      - 80:80
+    links:
+      - "flask"
+      - "testspeed"
