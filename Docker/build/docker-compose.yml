@@ -2,8 +2,8 @@ version: "3"
 
 services:
   flask:
-    container_name: flask-time
-    image: jcdemo/flaskapp
+    container_name: zoopark
+    build: \flask
 
   testspeed:
     container_name: speed-site

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+
+    <title>Гав гав</title>
+
+  </head>
+  <style>
+    
+.fig {
+    text-align: center; /* Выравнивание по центру */ 
+   }
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    color: #006400;
+   } 
+  </style>
+  <body bgcolor="#90EE90">
+
+  <p class="fig"><img src="{{ url_for('static', filename= 'Image/dogs.jpeg') }}" width="370" height="220" alt="Фотография"></p>
+  <h1 align="center"><strong>Гав</strong></h1>
+
+  <h2 align="center">гав гав</h2>
+
+  <h3 align="center"><a href="{{ url_for('index') }}">Вернуться к выбору животных</a></h3>
+
+
+  </body>
+
+</html>
+

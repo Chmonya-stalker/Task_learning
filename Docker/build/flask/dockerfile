@@ -1,3 +1,4 @@
 FROM jazzdd/alpine-flask
-COPY . .
+RUN apk add nano
+COPY ./zoo .
 EXPOSE 80
