@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Teting
         run: echo "Hello world!"
-  my_testing2:
+  my_testings:
     runs-on: ubuntu-latest
     steps:
-      - name: Teting2
+      - name: Tetings2
         run: echo "Hello Sego!"
