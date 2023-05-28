@@ -16,10 +16,19 @@ jobs:
   my_testing:
     runs-on: ubuntu-latest
     steps:
-      - name: Copy Rep
+      - name: Repository clone
         uses: actions/checkout@v3 
-      - name: Print rep
+        
+      - name: Print dir
         run: ls -la
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_LOGN }}
+          password: ${{ secrets.DOCKER_PASS }}
+      - name: Login?
+        run: docker login
+      
   #my_testings:
     #runs-on: ubuntu-latest
     #steps:
