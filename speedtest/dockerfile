@@ -1,2 +1,2 @@
 FROM nginx:1.23.4-alpine-slim
-COPY ./speed /usr/share/nginx/html
+COPY ./resources /usr/share/nginx/html
