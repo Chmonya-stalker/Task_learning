@@ -26,10 +26,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASS }}
-      - name: Build docker image
-        run: docker build -t sanpilogov161/zoopark:latest
-      - name: docker push
-        run: docker push sanpilogov161/zoopark:latest
+      #- name: Build docker image
+      #  run: docker build -t sanpilogov161/zoopark:latest
+      #- name: docker push
+      #  run: docker push sanpilogov161/zoopark:latest
       - name: change dir
         run: cd ./flask
       - name: Extract metadata (tags, labels) for Docker
