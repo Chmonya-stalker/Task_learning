@@ -1,4 +1,3 @@
 FROM jazzdd/alpine-flask
-RUN apk add nano
 COPY . .
 EXPOSE 80
