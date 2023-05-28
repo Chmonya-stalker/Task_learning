@@ -16,10 +16,13 @@ jobs:
   my_testing:
     runs-on: ubuntu-latest
     steps:
-      - name: Teting
-        run: echo "Hello world!"
-  my_testings:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Tetings2
-        run: echo "Hello Sego!"
+      - name: Copy Rep
+        uses: actions/checkout@v3 
+      - name: Print rep
+        run: ls -la
+  #my_testings:
+    #runs-on: ubuntu-latest
+    #steps:
+     # - name: Tetings2
+     #   run: echo "Hello Sego!"
+        
