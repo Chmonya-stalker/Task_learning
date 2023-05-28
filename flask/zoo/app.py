@@ -6,25 +6,55 @@ app = Flask(__name__)
 
 @app.route('/zoo/', methods=['GET', 'POST'])
 def form_example():
-    animallist = ["Dogs", "Cat", "Pig", "Snake", "Duck "]
+    animallist = ["Dogs", "Cat", "Pig", "Snake", "Duck"]
     soundlist = ["gav gav", "may may", "hry hry", "chhh chhh", "kra kra"]
+
     if request.method == 'POST':
+
         animal = request.form.get('animal')
-        if len(animal) < 0  or not animal in animallist:
-            return 'There is no such animal. You may have entered the wrong name'
+        if animal is None:
+            return 'You have not passed the required animal key'
+        # Проверка поля "Животное"
+        if len(animal) <= 0 or animal.isspace():
+            return 'Invalid animal name format'
+        else:
+            animal = animal.strip()
+            if not animal in animallist:
+                return 'There is no such animal. You may have entered the wrong name'
 
+        # Проверка поля "Имя"     
         name = request.form.get('name')
-        if len(name) < 0:
+        if name is None:
+            return 'You have not passed the required name key'
+        if len(name) <= 0 or name.isspace():
             return 'Name Empty :('
-        sound = animallist.index(animal)
+        else:
+            name = name.strip()
 
-        count = int(request.form.get('count'))
-        if  len(animal) < 0 or not isinstance(count, int) or count < 1:
-           return ' You entered the number of repetitions incorrectly.'
+        # Проверка числа повторов 
+        count = request.form.get('count')
+        if count is None:
+            return 'You have not passed the required count key'
+        if len(count) <= 0 or count.isspace():
+            return 'Count is empty.'
+        else:
+            try: 
+                count = int(count)
+                if count < 1:
+                    return 'Count < 1'
+            except:
+                return 'Invalid Count format.'
+           
+        # Формирование звуков
+        sound = ''
+        for i in range(count):
+            sound +=" " + soundlist[animallist.index(animal)]
 
         return '''
                   <h1>Привет! Я (сюда вставить эмоджи) {} !</h1>
-                  <h1>Меня зовут {}</h1>'''.format(animal, name)
+                  <h1>Меня зовут {}</h1>
+                  <h1>Я делаю {}</h1>
+                  '''.format(animal, name, sound)
                   
 
     return '''
@@ -46,6 +76,3 @@ def form_example():
 
 if __name__ == '__main__':
     app.run()
-
-#soundlist[animallist.index(animal)]
-#for i in range(count):
