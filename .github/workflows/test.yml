@@ -29,7 +29,7 @@ jobs:
       - name: Login?
         run: docker login
       
-  #my_testings:
+  ##my_testings:
     #runs-on: ubuntu-latest
     #steps:
      # - name: Tetings2
