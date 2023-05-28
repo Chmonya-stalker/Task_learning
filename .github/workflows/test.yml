@@ -1,51 +1,30 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Test-pypline
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "ZooparkFlask" ]
+    paths: 
+      - 'flask/**'
     
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   my_testing:
     runs-on: ubuntu-latest
     steps:
       - name: Repository clone
         uses: actions/checkout@v3 
-        
-      - name: Print dir
-        run: ls -la
+
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASS }}
-      #- name: Build docker image
-      #  run: docker build -t sanpilogov161/zoopark:latest
-      #- name: docker push
-      #  run: docker push sanpilogov161/zoopark:latest
-      - name: change dir
-        run: cd ./flask
-      #- name: Extract metadata (tags, labels) for Docker
-      #  id: meta
-      #  uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
-      #  with:
-      #    images: my-docker-hub-namespace/my-docker-hub-repository
+          
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./flask
           push: true
           tags: ${{ secrets.DOCKER_LOGIN }}/zoopark:latest
-  ##my_testings:
-    #runs-on: ubuntu-latest
-    #steps:
-     # - name: Tetings2
-     #   run: echo "Hello Sego!"
         
