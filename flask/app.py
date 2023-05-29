@@ -76,6 +76,7 @@ def get_metod():
             <div><label>Какое вы хотите ему дать имя: <input type="text" name="name"></label></div>
             <div><label>Сколько раз вы хотите услышать его: <input type="number" name="count"></label></div>
             <input type="submit" value="К животному">
+проверка как работает
         </form>'''
 if __name__ == '__main__':
     app.run()
