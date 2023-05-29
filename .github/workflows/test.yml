@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "ZooparkFlask" ]
     paths: 
-      - 'flask/**'
+      - 'flask/app.py'
     
   
 
