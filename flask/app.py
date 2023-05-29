@@ -5,12 +5,16 @@ from flask import request
 
 app = Flask(__name__)
 
+#Создание маршрута для метода POST
 @app.route('/zoo/', methods=['POST'])
 def post_metod():
+
+    #Листы с необходимой информацией и в строгой последовательности
     animallist = ["Dogs", "Cat", "Pig", "Snake", "Duck"]
     soundlist = ["gav gav", "may may", "hry hry", "chhh chhh", "kra kra"]
     emoji = ["&#128021","&#128008 ","&#128022", "&#128013", "&#128036"]
 
+    # Работа с переменной 'animal'
     animal = request.form.get('animal')
     if animal is None:
         return 'You have not passed the required animal key'
@@ -22,7 +26,7 @@ def post_metod():
         if not animal in animallist:
             return 'There is no such animal. You may have entered the wrong name'
 
-    # Проверка поля "Имя"     
+    # Работа с переменной 'name'
     name = request.form.get('name')
     if name is None:
         return 'You have not passed the required name key'
@@ -31,7 +35,7 @@ def post_metod():
     else:
         name = name.strip()
 
-    # Проверка числа повторов 
+    # Работа с переменной 'count'
     count = request.form.get('count')
     if count is None:
         return 'You have not passed the required count key'
@@ -50,15 +54,14 @@ def post_metod():
     for i in range(count):
         sound +=" " + soundlist[animallist.index(animal)]
 
+    # Вывод всей информации
     return '''
               <h1>Привет! Я {} {}!</h1>
               <h1>Меня зовут {}</h1>
               <h1>Я делаю {}</h1>
               '''.format(animal, emoji[animallist.index(animal)], name, sound)
-                  
 
-
-
+#Создание маршрута для метода GET
 @app.route('/zoo/', methods=['GET'])
 def get_metod():
     return '''
