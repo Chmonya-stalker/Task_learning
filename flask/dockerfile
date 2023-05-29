@@ -1,3 +1,4 @@
 FROM jazzdd/alpine-flask
 COPY ./app.py .
 EXPOSE 80
+бла бла
