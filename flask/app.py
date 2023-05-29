@@ -77,6 +77,6 @@ def get_metod():
             <div><label>Сколько раз вы хотите услышать его: <input type="number" name="count"></label></div>
             <input type="submit" value="К животному">
         </form>'''
-
+#test
 if __name__ == '__main__':
     app.run()
