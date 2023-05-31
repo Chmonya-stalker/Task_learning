@@ -10,6 +10,7 @@ app = Flask(__name__)
 def post_metod():
 
     #Листы с необходимой информацией и в строгой последовательности
+    ## А если я захочу посетить слона в зоопарке ? или Тигра? Нужно будет переписывать приложение ?
     animallist = ["Dogs", "Cat", "Pig", "Snake", "Duck"]
     soundlist = ["gav gav", "may may", "hry hry", "chhh chhh", "kra kra"]
     emoji = ["&#128021","&#128008 ","&#128022", "&#128013", "&#128036"]
@@ -63,6 +64,7 @@ def post_metod():
 
 #Создание маршрута для метода GET
 @app.route('/zoo/', methods=['GET'])
+# Добавь маршрут для метода POST, что бы принимал json формата: {animal: foo, count: number, sound: bar}
 def get_metod():
     return '''
       <form method="POST">
