@@ -1,3 +1,5 @@
-FROM jazzdd/alpine-flask
+## TODO: Может поискать официальный образ? А еще лучше - самому собрать необходимое в alpine
+FROM jazzdd/alpine-flask 
+##
 COPY ./app.py .
 EXPOSE 80
