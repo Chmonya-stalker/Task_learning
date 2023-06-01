@@ -1,16 +1,17 @@
 version: "3"
 
 services:
-  flask:
-    container_name: zoopark # Это лишнее, лучше перенести это в название сервиса
-    image: sanpilogov161/zoopark:latest
+  zoopark:
+    #container_name: zoopark # Это лишнее, лучше перенести это в название сервиса
+    #image: sanpilogov161/zoopark:latest
+    build: ./flask
     # Тут нужен блок с политикой перезапуска сервиса
     # Тут добавить healthcheck
     # Тут нужен блок описывающий политику ведения логов
     # тут должен быть блок resources
 
-  testspeed:
-    container_name: speed-site # Это лишнее
+  speedtest:
+    #container_name: speed-site # Это лишнее
     build: ./speedtest
     # Тут нужен блок с политикой перезапуска сервиса
     # Тут добавить healthcheck
@@ -18,13 +19,13 @@ services:
     # тут должен быть блок resources
 
   revers:
-    container_name: revers # Это лишнее
+    #container_name: revers # Это лишнее
     build: ./revers
     ports: 
       - 80:80
-    links: # Это лишнее
-      - "flask" # Это лишнее
-      - "testspeed" # Это лишнее
+    #links: # Это лишнее
+    #  - "flask" # Это лишнее
+    #  - "testspeed" # Это лишнее
     # Тут нужен блок с политикой перезапуска сервиса 
     # тут должен быть блок resources
     # Тут нужен блок описывающий политику ведения логов
