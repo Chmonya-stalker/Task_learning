@@ -27,7 +27,7 @@
 - Zoopark - http://localhost/zoo/
 - Revers - http://localhost/  
 3. При изменении [приложения](/flask/app.py) нашего зоопарка выполняется сборка и push образа в Docker Hub  
-(Работает только с веткой Zoopark)
+(Работает только с веткой ZooparkFlask)
 
 
 ## P.S
