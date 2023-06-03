@@ -1,10 +1,3 @@
-#Old
-## TODO: Может поискать официальный образ? А еще лучше - самому собрать необходимое в alpine
-#FROM jazzdd/alpine-flask 
-#RUN pip install emojis
-#COPY ./app.py .
-#EXPOSE 80
-# syntax=docker/dockerfile:1.4
 FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
 
 WORKDIR /src
@@ -20,6 +13,8 @@ FROM builder as dev-envs
 
 RUN apk update
 RUN apk add git
+# nano для траблшутинга
+RUN apk add nano 
 
 RUN addgroup -S docker
 RUN adduser -S --shell /bin/bash --ingroup docker vscode
