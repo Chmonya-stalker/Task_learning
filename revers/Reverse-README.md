@@ -1,9 +1,5 @@
-ЗДЕСЬ_ДОЛЖНО_БЫТЬ_ОГЛАВЛЕНИЕ
+# Revers
 
-## Introduction
-В этой папке находится Dockerfile и конфиг nginx для приложения 'Revers'
-## Reqirements
-
-## Installation
-
-## Usage
+## About it
+Revers - Веб сервер Nginx, настроенный для работы как реверс сервер.  
+Данное приложение является ключевым для взаимодействия с двумя остальными приложениями ([Zoopark](/flask/) и [Speedtest](/speedtest/))  
