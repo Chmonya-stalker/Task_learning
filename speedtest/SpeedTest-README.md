@@ -1,10 +1,4 @@
-
-ЗДЕСЬ_ДОЛЖНО_БЫТЬ_ОГЛАВЛЕНИЕ
-
-## Introduction
-В этой папке находится dockerfile и ресурсы для приложения SpeedTest
-## Reqirements
-
-## Installation
-
-## Usage
+# Speedtest
+## About it
+Speedtest - Простой веб сервер (Nginx), ресурсами которого являются сайт для измерения скорости интернета
+Часть учебной работы, которая запускается в связке с [Zoopark](/flask/) + [Revers](/revers/).

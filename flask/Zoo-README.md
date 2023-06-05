@@ -1,11 +1,9 @@
-ЗДЕСЬ_ДОЛЖНО_БЫТЬ_ОГЛАВЛЕНИЕ
-#
-## Introduction
-
-При любом изменении в файле app.py и последующем пуше, выполянется workflou, который собирает docker image с приложением zoopark и выполняет push в DockerHub
-
-## Installation
-
-## Requirements
-
-## Usage
+# Zoopark
+## About it
+Zoopark - Приложение написанное на фреймворке Flask.  
+Данное приложение позволяет указать животное, выбрать ему звук и количество повторов звука.
+## Application Features
+- Реализованы смайлики животных  
+- Данное приложение умеет работать с методами GET, POST к корневому адресу (http://localhost/zoo/), а также понимает json для маршрута http://localhost/zoo/json/  
+- Ключевыми полями для метода POST являются 'animal', 'sound', 'count'
+Часть учебной работы, которая запускается в связке с [Speedtest](/speedtest/) + [Revers](/revers/).
